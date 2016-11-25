@@ -1,0 +1,52 @@
+
+<html>
+
+<script>
+
+var textToMorse = {}
+
+textToMorse.a = '.-'
+textToMorse.b = '-...'
+textToMorse.c = '-.-'
+textToMorse.d = '-..'
+textToMorse.e = '.'
+textToMorse.f = '..-.'
+textToMorse.g = '--.'
+textToMorse.h = '....'
+textToMorse.i = '..'
+textToMorse.j = '.---'
+textToMorse.k = '-.-'
+textToMorse.l = '.-..'
+textToMorse.m = '--'
+textToMorse.n = '-.'
+textToMorse.o = '---'
+textToMorse.p = '.--.'
+textToMorse.q = '--.-'
+textToMorse.r = '.-.'
+textToMorse.s = '...'
+textToMorse.t = '-'
+textToMorse.u = '..-'
+textToMorse.v = '...-'
+textToMorse.w = '.--'
+textToMorse.x = '-..-'
+textToMorse.y = '-.--'
+textToMorse.z = '--..'
+textToMorse[" "] = ""
+
+function translateToMorse() {
+  var alertMessage = ""
+
+  var text = document.getElementById('textToTranslate').value
+
+  for (var i in text) {
+    var letter = text[i]
+    alertMessage += textToMorse[letter] + " "
+  }
+  document.getElementById('result').innerHTML = alertMessage
+}
+</script>
+
+
+  <input id="textToTranslate">
+  <button onclick="translateToMorse()">translate</button>
+  <p id="result"></p>
